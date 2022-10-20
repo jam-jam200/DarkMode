@@ -1,6 +1,7 @@
 import React from "react";
 import useLocalStorage from "use-local-storage";
 import "./index.css";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
@@ -11,6 +12,12 @@ function App() {
 
   return (
     <div className="app" data-theme={theme}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Dark Mode</title>
+        <link rel="canonical" href="http://darkmodefirstpush.netlify.app" />
+        <meta name="description" content="my first dark mode" />
+      </Helmet>
       <div className="login">
         <h1>Login</h1>
         <div className="container">
